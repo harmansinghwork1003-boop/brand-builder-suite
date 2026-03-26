@@ -80,15 +80,25 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float-gentle": {
+        "float-a": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
+        },
+        "float-b": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-3px)" },
+        },
+        "float-c": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float-gentle": "float-gentle 10s ease-in-out infinite",
+        "float-a": "float-a 10s ease-in-out infinite",
+        "float-b": "float-b 12s ease-in-out infinite",
+        "float-c": "float-c 11s ease-in-out infinite",
       },
     },
   },
