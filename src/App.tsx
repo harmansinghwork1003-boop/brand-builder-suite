@@ -12,6 +12,7 @@ import SEOPage from "./pages/services/SEO";
 import AppDevelopment from "./pages/services/AppDevelopment";
 import SMMPricing from "./pages/services/SMMPricing";
 import WebsitePricing from "./pages/services/WebsitePricing";
+import Chatbot from "./components/Chatbot";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Chatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
