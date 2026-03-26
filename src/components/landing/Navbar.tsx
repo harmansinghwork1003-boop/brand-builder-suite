@@ -1,53 +1,147 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
+import { useTheme } from "next-themes";
+
+const services = [
+  { label: "Website Development", href: "/services/website-development" },
+  { label: "Social Media Management", href: "/services/social-media-management" },
+  { label: "SEO", href: "/services/seo" },
+  { label: "App Development", href: "/services/app-development" },
+];
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Packages", href: "#packages" },
-  { label: "Process", href: "#process" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Process", href: "/#process" },
+  { label: "Testimonials", href: "/#testimonials" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+
+  const handleNavClick = (href: string) => {
+    setOpen(false);
+    if (href.startsWith("/#") && isHome) {
+      const el = document.querySelector(href.replace("/", ""));
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="text-lg font-bold tracking-tight text-foreground">
+        <Link to="/" className="text-lg font-bold tracking-tight text-foreground">
           Makes & Made<span className="text-primary"> Developers</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              {l.label}
-            </a>
-          ))}
+        <div className="hidden lg:flex items-center gap-6">
+          {/* Services dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Services <ChevronDown size={14} />
+            </button>
+            <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-card border border-border rounded-lg shadow-card-hover p-2 min-w-[220px]">
+                {services.map((s) => (
+                  <Link key={s.href} to={s.href} className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors">
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {navLinks.map((l) =>
+            l.href.startsWith("/#") ? (
+              isHome ? (
+                <a key={l.href} href={l.href.replace("/", "")} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href} to={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                  {l.label}
+                </Link>
+              )
+            ) : (
+              <Link key={l.href} to={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                {l.label}
+              </Link>
+            )
+          )}
+
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
           <Button size="sm" asChild>
-            <a href="#contact">Get Started</a>
+            {isHome ? (
+              <a href="#contact">Get Started</a>
+            ) : (
+              <Link to="/#contact">Get Started</Link>
+            )}
           </Button>
         </div>
 
-        {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile */}
+        <div className="flex lg:hidden items-center gap-2">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-md text-muted-foreground hover:text-foreground"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button className="text-foreground" onClick={() => setOpen(!open)}>
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border bg-background px-6 pb-6 pt-2 space-y-3">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2">
-              {l.label}
-            </a>
-          ))}
-          <Button size="sm" className="w-full" asChild>
-            <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
+        <div className="lg:hidden border-t border-border bg-background px-6 pb-6 pt-2 space-y-1">
+          <button
+            onClick={() => setServicesOpen(!servicesOpen)}
+            className="flex items-center justify-between w-full text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+          >
+            Services <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+          </button>
+          {servicesOpen && (
+            <div className="pl-4 space-y-1">
+              {services.map((s) => (
+                <Link key={s.href} to={s.href} onClick={() => setOpen(false)} className="block text-sm text-muted-foreground hover:text-foreground py-1.5">
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          )}
+          {navLinks.map((l) =>
+            l.href.startsWith("/#") && isHome ? (
+              <a key={l.href} href={l.href.replace("/", "")} onClick={() => handleNavClick(l.href)} className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2">
+                {l.label}
+              </a>
+            ) : (
+              <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2">
+                {l.label}
+              </Link>
+            )
+          )}
+          <Button size="sm" className="w-full mt-2" asChild>
+            {isHome ? (
+              <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
+            ) : (
+              <Link to="/#contact" onClick={() => setOpen(false)}>Get Started</Link>
+            )}
           </Button>
         </div>
       )}
