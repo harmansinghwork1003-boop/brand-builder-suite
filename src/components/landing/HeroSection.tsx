@@ -74,11 +74,10 @@ const HeroSection = () => {
             className="hidden lg:block relative"
           >
             <div className="relative w-full h-[460px]">
-              <FloatingCard icon={<Target size={22} />} title="Results-Focused" desc="Strategy that drives growth" className="absolute top-0 left-8 animate-float" delay={0} />
-              <FloatingCard icon={<Zap size={22} />} title="Fast & Reliable" desc="On-time, every time" className="absolute top-24 right-0 animate-float" delay={1} />
-              <FloatingCard icon={<Sparkles size={22} />} title="Premium Quality" desc="Enterprise-grade execution" className="absolute bottom-8 left-12 animate-float" delay={2} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/10 rounded-full blur-[80px]" />
-              <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/15 rounded-full blur-[60px]" />
+              <FloatingCard icon={<Target size={22} />} title="Results-Focused" desc="Strategy that drives growth" className="absolute top-0 left-8" />
+              <FloatingCard icon={<Zap size={22} />} title="Fast & Reliable" desc="On-time, every time" className="absolute top-24 right-0" />
+              <FloatingCard icon={<Sparkles size={22} />} title="Premium Quality" desc="Enterprise-grade execution" className="absolute bottom-8 left-12" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/8 rounded-full blur-[80px]" />
             </div>
           </motion.div>
         </div>
