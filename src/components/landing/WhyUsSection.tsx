@@ -16,7 +16,7 @@ const WhyUsSection = () => (
     <div className="container">
       <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Why Choose Us</p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
           Why <span className="gradient-text">Makes & Made</span> Developers?
         </h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Focused on quality, not quantity. Custom solutions, not templates.</p>

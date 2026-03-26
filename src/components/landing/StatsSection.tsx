@@ -17,7 +17,7 @@ const StatsSection = () => (
         {stats.map((s, i) => (
           <motion.div key={s.label} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
             className="text-center">
-            <p className="text-4xl sm:text-5xl font-extrabold gradient-text mb-2">{s.value}</p>
+            <p className="text-3xl sm:text-4xl font-extrabold gradient-text mb-2">{s.value}</p>
             <p className="text-sm text-muted-foreground font-medium">{s.label}</p>
           </motion.div>
         ))}
