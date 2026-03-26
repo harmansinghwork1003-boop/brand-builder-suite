@@ -13,6 +13,7 @@ import Footer from "@/components/landing/Footer";
 
 const Index = () => (
   <>
+    <TrustBar />
     <Navbar />
     <HeroSection />
     <WhyUsSection />

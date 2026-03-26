@@ -20,6 +20,7 @@ const WhyUsSection = () => (
           Why <span className="gradient-text">Makes & Made</span> Developers?
         </h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Focused on quality, not quantity. Custom solutions, not templates.</p>
+        <p className="text-primary/80 mt-3 text-sm font-medium tracking-wide">We only work with businesses serious about growth.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
