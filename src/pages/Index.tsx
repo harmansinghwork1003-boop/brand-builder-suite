@@ -1,3 +1,4 @@
+import TrustBar from "@/components/landing/TrustBar";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import WhyUsSection from "@/components/landing/WhyUsSection";
