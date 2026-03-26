@@ -48,7 +48,7 @@ const Navbar = () => {
             <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Services <ChevronDown size={14} />
             </button>
-            <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-[250ms] ease-out">
               <div className="card-premium p-2 min-w-[240px]">
                 {services.map((s) => (
                   <Link key={s.href} to={s.href} className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-lg transition-colors">
