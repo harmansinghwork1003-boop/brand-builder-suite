@@ -80,10 +80,9 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%": { transform: "translateY(0px)", opacity: "1" },
-          "50%": { transform: "translateY(-8px)", opacity: "0.92" },
-          "100%": { transform: "translateY(0px)", opacity: "1" },
+        "float-gentle": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
       animation: {
