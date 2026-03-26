@@ -26,15 +26,17 @@ const HeroSection = () => {
               Trusted by businesses across India
             </div>
 
-            <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-foreground leading-[1.05] mb-6 text-balance">
+            <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.08] mb-6 text-balance">
               We Build Digital Systems That{" "}
               <span className="gradient-text">Generate Real</span>{" "}
               Business Growth
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed">
+            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              className="text-base sm:text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed">
               Strategy-first development, marketing, and automation — engineered to deliver measurable ROI, not just a website.
-            </p>
+            </motion.p>
 
             <div className="flex flex-wrap gap-4 mb-8">
               <Button variant="hero" size="lg" className="btn-pulse" asChild>
