@@ -37,7 +37,7 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button variant="hero" size="lg" asChild>
+              <Button variant="hero" size="lg" className="btn-pulse" asChild>
                 {isHome ? (
                   <a href="#contact">
                     Get Started <ArrowRight className="ml-1" size={18} />
