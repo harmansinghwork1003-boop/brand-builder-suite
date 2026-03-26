@@ -19,24 +19,26 @@ const additionalServices = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-20 bg-card/50">
+  <section id="services" className="section-padding bg-card/30">
     <div className="container">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-2">What We Do</p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Services That Drive Growth</h2>
-        <p className="text-muted-foreground mt-3 max-w-xl mx-auto">From development to marketing — everything your business needs to succeed online.</p>
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">What We Do</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
+          Services That <span className="gradient-text">Drive Growth</span>
+        </h2>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">From development to marketing — everything your business needs to succeed online.</p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {coreServices.map((s, i) => (
-          <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-            <Link to={s.href} className="block bg-card border border-border rounded-xl p-6 hover:shadow-elevated hover:border-primary/30 transition-all duration-300 group h-full">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                <s.icon size={22} />
+          <motion.div key={s.title} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+            <Link to={s.href} className="card-premium block p-7 group h-full">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:glow-primary-sm transition-shadow duration-300">
+                <s.icon size={24} />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
-              <span className="inline-flex items-center text-sm text-primary font-medium group-hover:gap-2 transition-all">
+              <h3 className="font-bold text-foreground mb-2 text-lg">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+              <span className="inline-flex items-center text-sm text-primary font-semibold group-hover:gap-2 transition-all">
                 Learn More <ArrowRight size={14} className="ml-1" />
               </span>
             </Link>
@@ -44,20 +46,20 @@ const ServicesSection = () => (
         ))}
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-foreground">Additional Solutions</h3>
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+        <h3 className="text-3xl font-extrabold text-foreground">Additional <span className="gradient-text">Solutions</span></h3>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {additionalServices.map((s, i) => (
           <motion.div key={s.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-            className="flex items-start gap-4 bg-card border border-border rounded-lg p-4 hover:border-primary/20 transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-              <s.icon size={18} />
+            className="card-premium flex items-start gap-4 p-5 group">
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:glow-primary-sm transition-shadow duration-300">
+              <s.icon size={20} />
             </div>
             <div>
-              <h4 className="font-medium text-foreground text-sm">{s.title}</h4>
-              <p className="text-xs text-muted-foreground mt-0.5">{s.desc}</p>
+              <h4 className="font-semibold text-foreground">{s.title}</h4>
+              <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
             </div>
           </motion.div>
         ))}
