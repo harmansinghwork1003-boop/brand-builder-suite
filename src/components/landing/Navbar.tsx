@@ -79,7 +79,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300"
+            className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-[350ms]"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>

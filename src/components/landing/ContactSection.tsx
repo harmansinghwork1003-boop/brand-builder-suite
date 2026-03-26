@@ -19,6 +19,8 @@ const serviceOptions = [
   "Other",
 ];
 
+const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
+
 const ContactSection = () => {
   const [searchParams] = useSearchParams();
   const preselected = searchParams.get("service") || "";
@@ -39,7 +41,7 @@ const ContactSection = () => {
     <section id="contact" className="section-padding bg-background relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="container relative">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
           <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Get In Touch</p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
             Let's Build Something That <span className="gradient-text">Actually Works</span>
@@ -48,13 +50,13 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
-          <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-3 space-y-5">
+          <motion.form onSubmit={handleSubmit} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="lg:col-span-3 space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <Input name="name" placeholder="Your Name" required className="bg-card h-12 rounded-xl border-border/50 focus:border-primary/50" />
               <Input name="email" type="email" placeholder="Email Address" required className="bg-card h-12 rounded-xl border-border/50 focus:border-primary/50" />
             </div>
             <Input name="phone" type="tel" placeholder="Phone Number" className="bg-card h-12 rounded-xl border-border/50 focus:border-primary/50" />
-            <select name="service" defaultValue={preselected} className="w-full h-12 rounded-xl border border-border/50 bg-card px-3 text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors">
+            <select name="service" defaultValue={preselected} className="w-full h-12 rounded-xl border border-border/50 bg-card px-3 text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors duration-[350ms]">
               <option value="">Select a Service</option>
               {serviceOptions.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -66,7 +68,7 @@ const ContactSection = () => {
             </Button>
           </motion.form>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-6">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }} className="lg:col-span-2 space-y-6">
             {[
               { icon: Mail, label: "Email", value: "contact@makesandmade.com" },
               { icon: Phone, label: "Phone", value: "+91 98765 43210" },

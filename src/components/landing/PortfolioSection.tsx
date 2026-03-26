@@ -7,10 +7,12 @@ const projects = [
   { title: "SaaS Dashboard", category: "Website", gradient: "from-primary/15 to-secondary" },
 ];
 
+const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
+
 const PortfolioSection = () => (
   <section id="portfolio" className="section-padding bg-background">
     <div className="container">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+      <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Our Work</p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           Portfolio <span className="gradient-text">Preview</span>
@@ -20,10 +22,10 @@ const PortfolioSection = () => (
 
       <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {projects.map((p, i) => (
-          <motion.div key={p.title} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+          <motion.div key={p.title} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
             className="card-premium group overflow-hidden">
             <div className={`h-52 bg-gradient-to-br ${p.gradient} flex items-center justify-center relative`}>
-              <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/8 transition-colors duration-[350ms]" />
               <span className="text-foreground/30 text-sm font-medium relative z-10">Preview</span>
             </div>
             <div className="p-6">

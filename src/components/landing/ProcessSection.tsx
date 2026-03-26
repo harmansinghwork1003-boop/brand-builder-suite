@@ -8,10 +8,12 @@ const steps = [
   { icon: Rocket, title: "Delivery & Optimization", desc: "Launch, test, optimize — and ongoing support to keep things running." },
 ];
 
+const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
+
 const ProcessSection = () => (
   <section id="process" className="section-padding bg-card/30">
     <div className="container">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+      <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Our Process</p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           How We <span className="gradient-text">Work</span>
@@ -20,9 +22,9 @@ const ProcessSection = () => (
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map((s, i) => (
-          <motion.div key={s.title} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+          <motion.div key={s.title} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
             className="relative text-center group">
-            <div className="w-18 h-18 w-[72px] h-[72px] rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-5 group-hover:glow-primary transition-shadow duration-300">
+            <div className="w-[72px] h-[72px] rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-5 transition-shadow duration-[350ms]">
               <s.icon size={30} />
             </div>
             <span className="text-xs text-primary font-bold uppercase tracking-wider">Step {i + 1}</span>

@@ -15,15 +15,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
-      {/* Grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-      {/* Extra glow orb */}
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-8 glow-primary-sm">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-8">
               <Sparkles size={14} />
               Trusted by businesses across India
             </div>
@@ -59,7 +57,6 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Trust points */}
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {trustPoints.map((point) => (
                 <div key={point} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -71,16 +68,15 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="hidden lg:block relative"
           >
             <div className="relative w-full h-[460px]">
               <FloatingCard icon={<Target size={22} />} title="Results-Focused" desc="Strategy that drives growth" className="absolute top-0 left-8 animate-float" delay={0} />
               <FloatingCard icon={<Zap size={22} />} title="Fast & Reliable" desc="On-time, every time" className="absolute top-24 right-0 animate-float" delay={1} />
               <FloatingCard icon={<Sparkles size={22} />} title="Premium Quality" desc="Enterprise-grade execution" className="absolute bottom-8 left-12 animate-float" delay={2} />
-              {/* Glow orbs */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/10 rounded-full blur-[80px]" />
               <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/15 rounded-full blur-[60px]" />
             </div>
@@ -93,7 +89,7 @@ const HeroSection = () => {
 
 const FloatingCard = ({ icon, title, desc, className, delay }: { icon: React.ReactNode; title: string; desc: string; className?: string; delay: number }) => (
   <div className={`card-premium p-6 w-72 backdrop-blur-sm ${className}`} style={{ animationDelay: `${delay}s` }}>
-    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-3 glow-primary-sm">{icon}</div>
+    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-3">{icon}</div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground mt-1">{desc}</p>
   </div>
