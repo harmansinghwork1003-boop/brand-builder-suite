@@ -9,10 +9,12 @@ const reasons = [
   { icon: HeartHandshake, title: "Results-Focused Approach", desc: "We don't just build — we ensure our solutions drive real business growth." },
 ];
 
+const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
+
 const WhyUsSection = () => (
   <section id="why-us" className="section-padding bg-background">
     <div className="container">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+      <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Why Choose Us</p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           Why <span className="gradient-text">Makes & Made</span> Developers?
@@ -24,13 +26,14 @@ const WhyUsSection = () => (
         {reasons.map((r, i) => (
           <motion.div
             key={r.title}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
             className="card-premium p-7 group"
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:glow-primary-sm transition-shadow duration-300">
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 transition-shadow duration-[350ms]">
               <r.icon size={24} />
             </div>
             <h3 className="font-bold text-foreground mb-2 text-lg">{r.title}</h3>

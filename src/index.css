@@ -111,13 +111,13 @@
     border-image: linear-gradient(135deg, hsl(var(--primary) / 0.5), hsl(var(--primary-glow) / 0.2)) 1;
   }
   .card-premium {
-    @apply bg-card border border-border rounded-2xl transition-all duration-300;
+    @apply bg-card border border-border rounded-2xl transition-all duration-[350ms] ease-out;
     box-shadow: var(--card-shadow);
   }
   .card-premium:hover {
     box-shadow: var(--card-shadow-hover);
-    border-color: hsl(var(--primary) / 0.3);
-    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.2);
+    transform: translateY(-2px);
   }
   .btn-gradient {
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
@@ -125,8 +125,7 @@
   }
   .btn-gradient:hover {
     background: linear-gradient(135deg, hsl(var(--primary-glow)) 0%, hsl(var(--primary)) 100%);
-    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.5);
-    transform: scale(1.02);
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.35);
   }
   .section-padding {
     @apply py-24 sm:py-28;
