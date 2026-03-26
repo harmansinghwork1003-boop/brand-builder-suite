@@ -47,6 +47,8 @@ const App = () => (
           <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Chatbot />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
