@@ -89,7 +89,7 @@ const HeroSection = () => {
 };
 
 const FloatingCard = ({ icon, title, desc, className }: { icon: React.ReactNode; title: string; desc: string; className?: string }) => (
-  <div className={`bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl p-6 w-72 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.2)] hover:border-primary/20 ${className}`}>
+  <div className={`bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl p-6 w-72 will-change-transform transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.2)] hover:border-primary/20 ${className}`}>
     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-3">{icon}</div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground mt-1">{desc}</p>
