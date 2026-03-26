@@ -26,7 +26,7 @@ const HeroSection = () => {
               Trusted by businesses across India
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-6 text-balance">
+            <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-foreground leading-[1.05] mb-6 text-balance">
               We Build Digital Systems That{" "}
               <span className="gradient-text">Generate Real</span>{" "}
               Business Growth

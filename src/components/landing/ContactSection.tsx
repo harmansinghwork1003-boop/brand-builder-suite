@@ -42,11 +42,12 @@ const ContactSection = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="container relative">
         <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
-          <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Start Your Growth</p>
+          <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Let's Talk Results</p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
-            Ready to <span className="gradient-text">Scale Your Business?</span>
+            Stop Losing Customers to <span className="gradient-text">Weak Digital Presence</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Book a free consultation — we'll audit your current digital presence and show you exactly where growth is hiding.</p>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Book a free consultation — we'll audit your digital presence and show you exactly where revenue is hiding.</p>
+          <p className="text-primary/70 mt-2 text-sm font-medium">Limited slots available each month — we keep our client list small for quality.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
