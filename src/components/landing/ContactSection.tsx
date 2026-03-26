@@ -42,11 +42,11 @@ const ContactSection = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="container relative">
         <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
-          <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Get In Touch</p>
+          <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Start Your Growth</p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
-            Let's Build Something That <span className="gradient-text">Actually Works</span>
+            Ready to <span className="gradient-text">Scale Your Business?</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Ready to grow your business? Tell us about your project.</p>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Book a free consultation — we'll audit your current digital presence and show you exactly where growth is hiding.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
@@ -63,9 +63,14 @@ const ContactSection = () => {
               ))}
             </select>
             <Textarea name="message" placeholder="Tell us about your project..." rows={4} required className="bg-card rounded-xl border-border/50 focus:border-primary/50" />
-            <Button type="submit" size="lg" disabled={loading} className="w-full sm:w-auto">
-              {loading ? "Sending..." : "Send Message"} <Send size={16} className="ml-1" />
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button type="submit" size="lg" disabled={loading} variant="hero">
+                {loading ? "Sending..." : "Get Started"} <Send size={16} className="ml-1" />
+              </Button>
+              <Button type="button" size="lg" variant="hero-outline" onClick={() => window.open("https://calendly.com", "_blank")}>
+                Book Free Consultation
+              </Button>
+            </div>
           </motion.form>
 
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }} className="lg:col-span-2 space-y-6">

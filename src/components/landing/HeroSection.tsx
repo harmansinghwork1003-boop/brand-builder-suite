@@ -27,13 +27,13 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-6 text-balance">
-              We Don't Just Build —{" "}
-              <span className="gradient-text">We Deliver Results</span>{" "}
-              That Grow Your Business
+              We Build Digital Systems That{" "}
+              <span className="gradient-text">Generate Real</span>{" "}
+              Business Growth
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed">
-              High-quality, research-driven digital solutions with on-time delivery. Custom solutions, not templates.
+              Strategy-first development, marketing, and automation — engineered to deliver measurable ROI, not just a website.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "150+", label: "Projects Completed" },
-  { value: "80+", label: "Clients Served" },
-  { value: "99%", label: "On-Time Delivery" },
-  { value: "4.9/5", label: "Client Satisfaction" },
+  { value: "150+", label: "Projects Delivered" },
+  { value: "80+", label: "Businesses Served" },
+  { value: "99%", label: "On-Time Commitment" },
+  { value: "4.9/5", label: "Client Satisfaction Score" },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
