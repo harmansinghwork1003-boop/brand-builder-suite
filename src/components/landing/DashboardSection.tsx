@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { BarChart3, FileText, Eye, Bell, Layout } from "lucide-react";
 
 const features = [
-  { icon: Layout, title: "Track Your Projects", desc: "See real-time progress on posts, reels, website builds, and more — all in one place." },
-  { icon: BarChart3, title: "View Detailed Reports", desc: "Access performance analytics, engagement metrics, and growth reports anytime." },
-  { icon: Eye, title: "Preview Your Content", desc: "Review and approve images, videos, and designs before they go live." },
-  { icon: Bell, title: "Get Instant Updates", desc: "Receive notifications on milestones, deliverables, and project updates." },
-  { icon: FileText, title: "Access All Documents", desc: "Contracts, invoices, brand guidelines — everything stored securely in your dashboard." },
+  { icon: Layout, title: "Live Project Tracking", desc: "Monitor every deliverable — posts, reels, website builds — with real-time status updates." },
+  { icon: BarChart3, title: "Performance Reports", desc: "Data-driven analytics showing exactly how your investment is performing." },
+  { icon: Eye, title: "Content Approval System", desc: "Review, comment, and approve all creative assets before they go live." },
+  { icon: Bell, title: "Milestone Notifications", desc: "Stay informed with instant alerts on progress, deadlines, and deliverables." },
+  { icon: FileText, title: "Secure Document Hub", desc: "Contracts, invoices, brand assets — everything organized and accessible 24/7." },
 ];
 
 const DashboardSection = () => (
