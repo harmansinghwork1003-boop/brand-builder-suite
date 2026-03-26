@@ -18,10 +18,10 @@ const DashboardSection = () => (
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Client Dashboard</p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
-          Your Work, <span className="gradient-text">Your Control</span>
+          Full Visibility, <span className="gradient-text">Total Control</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-          Every client gets a personal dashboard to track progress, view reports, and access deliverables — complete transparency, zero guesswork.
+          Every client gets a dedicated dashboard — track progress, approve content, view reports, and access documents. No follow-ups needed.
         </p>
       </motion.div>
 
