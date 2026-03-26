@@ -63,9 +63,14 @@ const ContactSection = () => {
               ))}
             </select>
             <Textarea name="message" placeholder="Tell us about your project..." rows={4} required className="bg-card rounded-xl border-border/50 focus:border-primary/50" />
-            <Button type="submit" size="lg" disabled={loading} className="w-full sm:w-auto">
-              {loading ? "Sending..." : "Send Message"} <Send size={16} className="ml-1" />
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button type="submit" size="lg" disabled={loading} variant="hero">
+                {loading ? "Sending..." : "Get Started"} <Send size={16} className="ml-1" />
+              </Button>
+              <Button type="button" size="lg" variant="hero-outline" onClick={() => window.open("https://calendly.com", "_blank")}>
+                Book Free Consultation
+              </Button>
+            </div>
           </motion.form>
 
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }} className="lg:col-span-2 space-y-6">

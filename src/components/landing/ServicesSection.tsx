@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { Globe, Megaphone, Search, Smartphone, ArrowRight, Video, Palette, ShieldCheck, Headphones } from "lucide-react";
 
 const coreServices = [
-  { icon: Globe, title: "Website Development", desc: "Custom websites that convert visitors into customers. From business sites to e-commerce.", href: "/services/website-development" },
-  { icon: Megaphone, title: "Social Media Management", desc: "Content creation, reels, engagement strategy, and growth — all managed for you.", href: "/services/social-media-management" },
-  { icon: Search, title: "SEO", desc: "Rank higher on Google, drive organic traffic, and dominate your local market.", href: "/services/seo" },
-  { icon: Smartphone, title: "App Development", desc: "Android & iOS apps built for performance, scalability, and user experience.", href: "/services/app-development" },
+  { icon: Globe, title: "Revenue-Driven Websites", desc: "High-converting websites engineered to turn visitors into paying customers — not just look good.", href: "/services/website-development" },
+  { icon: Megaphone, title: "Growth-Focused Social Media", desc: "End-to-end content strategy, creation, and management that builds your brand and drives engagement.", href: "/services/social-media-management" },
+  { icon: Search, title: "Search Dominance (SEO)", desc: "Data-backed SEO strategies that put you on page one and keep you there — driving organic revenue.", href: "/services/seo" },
+  { icon: Smartphone, title: "Custom App Solutions", desc: "Scalable Android & iOS applications designed for performance, retention, and business impact.", href: "/services/app-development" },
 ];
 
 const additionalServices = [
-  { icon: Megaphone, title: "Google Ads & Meta Ads", desc: "Paid campaigns that deliver measurable ROI." },
-  { icon: Palette, title: "Branding & Design", desc: "Logos, brand identity, and visual assets that stand out." },
-  { icon: Video, title: "Video Editing", desc: "Professional video content for social media and marketing." },
-  { icon: ShieldCheck, title: "Cybersecurity", desc: "Protect your digital assets with enterprise-grade security." },
-  { icon: Headphones, title: "Technical Support", desc: "Ongoing maintenance, updates, and support for your systems." },
-  { icon: Globe, title: "Web Portals", desc: "Custom portals for internal operations and client management." },
+  { icon: Megaphone, title: "Paid Advertising (Google & Meta)", desc: "ROI-focused ad campaigns that maximize every rupee spent." },
+  { icon: Palette, title: "Brand Identity Systems", desc: "Strategic brand design that makes you instantly recognizable." },
+  { icon: Video, title: "Video Production", desc: "Scroll-stopping video content for social media and campaigns." },
+  { icon: ShieldCheck, title: "Cybersecurity Solutions", desc: "Enterprise-grade protection for your digital infrastructure." },
+  { icon: Headphones, title: "Managed IT Support", desc: "24/7 maintenance, monitoring, and support so you never go down." },
+  { icon: Globe, title: "Custom Web Portals", desc: "Internal tools and client portals that streamline your operations." },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
