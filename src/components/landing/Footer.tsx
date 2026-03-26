@@ -1,40 +1,42 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => (
-  <footer className="border-t border-border bg-card py-12">
+  <footer className="border-t border-border bg-card/50 py-12">
     <div className="container">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <p className="font-bold text-foreground mb-3">Makes & Made<span className="text-primary"> Developers</span></p>
-          <p className="text-sm text-muted-foreground leading-relaxed">Building digital solutions that deliver real results. Quality, professionalism, and on-time delivery — every time.</p>
+          <p className="text-lg font-bold text-foreground mb-3">Makes & Made<span className="text-primary"> Developers</span></p>
+          <p className="text-sm text-muted-foreground leading-relaxed">We don't just build — we deliver results that grow your business.</p>
         </div>
         <div>
-          <p className="font-semibold text-foreground text-sm mb-3">Services</p>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="#services" className="hover:text-foreground transition-colors">Web Development</a></li>
-            <li><a href="#services" className="hover:text-foreground transition-colors">App Development</a></li>
-            <li><a href="#services" className="hover:text-foreground transition-colors">Digital Marketing</a></li>
-            <li><a href="#services" className="hover:text-foreground transition-colors">IT Solutions</a></li>
-          </ul>
+          <p className="font-semibold text-foreground mb-3 text-sm">Services</p>
+          <div className="space-y-2">
+            <Link to="/services/website-development" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Website Development</Link>
+            <Link to="/services/social-media-management" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Social Media Management</Link>
+            <Link to="/services/seo" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">SEO</Link>
+            <Link to="/services/app-development" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">App Development</Link>
+          </div>
         </div>
         <div>
-          <p className="font-semibold text-foreground text-sm mb-3">Company</p>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="#why-us" className="hover:text-foreground transition-colors">About Us</a></li>
-            <li><a href="#portfolio" className="hover:text-foreground transition-colors">Portfolio</a></li>
-            <li><a href="#process" className="hover:text-foreground transition-colors">Our Process</a></li>
-            <li><a href="#contact" className="hover:text-foreground transition-colors">Contact</a></li>
-          </ul>
+          <p className="font-semibold text-foreground mb-3 text-sm">Company</p>
+          <div className="space-y-2">
+            <Link to="/#why-us" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
+            <Link to="/#portfolio" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Portfolio</Link>
+            <Link to="/#testimonials" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Testimonials</Link>
+            <Link to="/#contact" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
+          </div>
         </div>
         <div>
-          <p className="font-semibold text-foreground text-sm mb-3">Contact</p>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>contact@makesandmade.com</li>
-            <li>+91 98765 43210</li>
-            <li>India</li>
-          </ul>
+          <p className="font-semibold text-foreground mb-3 text-sm">Contact</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <p>contact@makesandmade.com</p>
+            <p>+91 98765 43210</p>
+            <p>India</p>
+          </div>
         </div>
       </div>
-      <div className="border-t border-border mt-10 pt-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Makes and Made Developers. All rights reserved.
+      <div className="border-t border-border mt-8 pt-6 text-center">
+        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Makes & Made Developers. All rights reserved.</p>
       </div>
     </div>
   </footer>
