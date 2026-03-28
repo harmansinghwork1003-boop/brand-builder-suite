@@ -17,6 +17,7 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Chatbot from "./components/Chatbot";
+import SocialMediaCampaign from "./pages/portfolio/SocialMediaCampaign";
 
 const queryClient = new QueryClient();
 
