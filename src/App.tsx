@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
+import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import WebsiteDevelopment from "./pages/services/WebsiteDevelopment";
@@ -12,6 +13,9 @@ import SEOPage from "./pages/services/SEO";
 import AppDevelopment from "./pages/services/AppDevelopment";
 import SMMPricing from "./pages/services/SMMPricing";
 import WebsitePricing from "./pages/services/WebsitePricing";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Chatbot from "./components/Chatbot";
 
 const queryClient = new QueryClient();
@@ -32,24 +36,28 @@ function ScrollToTop() {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services/website-development" element={<WebsiteDevelopment />} />
-          <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
-          <Route path="/services/seo" element={<SEOPage />} />
-          <Route path="/services/app-development" element={<AppDevelopment />} />
-          <Route path="/services/social-media-management/pricing" element={<SMMPricing />} />
-          <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Chatbot />
-      </BrowserRouter>
-    </TooltipProvider>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/services/website-development" element={<WebsiteDevelopment />} />
+            <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
+            <Route path="/services/seo" element={<SEOPage />} />
+            <Route path="/services/app-development" element={<AppDevelopment />} />
+            <Route path="/services/social-media-management/pricing" element={<SMMPricing />} />
+            <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Chatbot />
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
