@@ -66,8 +66,38 @@ const SocialMediaManagement = () => (
       </div>
     </section>
 
-    {/* Process */}
+    {/* Portfolio Reels */}
     <section className="py-20 bg-background">
+      <div className="container">
+        <div className="text-center mb-14">
+          <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Our Work</p>
+          <h2 className="text-3xl font-bold text-foreground">Reels We've Created</h2>
+          <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Real content produced for real brands — scroll through our portfolio.</p>
+        </div>
+
+        {/* Featured Reel */}
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
+          className="max-w-sm mx-auto mb-10">
+          <div className="relative rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] aspect-[9/16]">
+            <video src="/videos/reel-1.mp4" controls preload="metadata" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-3 font-medium">Featured Reel</p>
+        </motion.div>
+
+        {/* Reel Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {[2, 3, 4, 5, 6, 7, 8].map((n, i) => (
+            <motion.div key={n} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06, duration: 0.4 }}
+              className="group relative rounded-xl overflow-hidden border border-border hover:border-primary/30 aspect-[9/16] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_hsl(var(--primary)/0.2)]">
+              <video src={`/videos/reel-${n}.mp4`} controls preload="metadata" className="w-full h-full object-cover" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Process */}
+    <section className="py-20 bg-card/50">
       <div className="container">
         <div className="text-center mb-14">
           <h2 className="text-3xl font-bold text-foreground">Our SMM Process</h2>
