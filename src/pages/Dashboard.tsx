@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, User, BarChart3, FileText, Image, Bell, Settings } from "lucide-react";
+import { LogOut, User, BarChart3, FileText, Image, Bell } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 
 const Dashboard = () => {

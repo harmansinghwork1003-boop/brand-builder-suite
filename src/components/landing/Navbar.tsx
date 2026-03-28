@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown, LogOut } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useAuth } from "@/hooks/useAuth";
 
 const services = [
   { label: "Website Development", href: "/services/website-development" },
@@ -23,6 +24,7 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   const isHome = location.pathname === "/";
 
@@ -79,18 +81,30 @@ const Navbar = () => {
 
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-[350ms]"
+            className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <Button size="sm" asChild>
-            {isHome ? (
-              <a href="#contact">Get Started</a>
-            ) : (
-              <Link to="/#contact">Get Started</Link>
-            )}
-          </Button>
+          {user ? (
+            <div className="flex items-center gap-3">
+              <Button size="sm" variant="outline" asChild>
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+              <Button size="sm" variant="ghost" onClick={signOut}>
+                <LogOut size={16} />
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Button size="sm" variant="ghost" asChild>
+                <Link to="/auth">Login</Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link to="/auth">Sign Up</Link>
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Mobile */}
@@ -136,13 +150,23 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Button size="sm" className="w-full mt-3" asChild>
-            {isHome ? (
-              <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
-            ) : (
-              <Link to="/#contact" onClick={() => setOpen(false)}>Get Started</Link>
-            )}
-          </Button>
+
+          {user ? (
+            <div className="space-y-2 pt-3">
+              <Button size="sm" className="w-full" asChild>
+                <Link to="/dashboard" onClick={() => setOpen(false)}>Dashboard</Link>
+              </Button>
+              <Button size="sm" variant="outline" className="w-full" onClick={() => { signOut(); setOpen(false); }}>
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <div className="space-y-2 pt-3">
+              <Button size="sm" className="w-full" asChild>
+                <Link to="/auth" onClick={() => setOpen(false)}>Login / Sign Up</Link>
+              </Button>
+            </div>
+          )}
         </div>
       )}
     </nav>
