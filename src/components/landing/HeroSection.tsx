@@ -69,31 +69,33 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="hidden lg:block relative"
-          >
-            <div className="relative w-full h-[460px]">
-              <FloatingCard icon={<Target size={22} />} title="Results-Focused" desc="Strategy that drives growth" className="absolute top-0 left-8 animate-float-a" />
-              <FloatingCard icon={<Zap size={22} />} title="Fast & Reliable" desc="On-time, every time" className="absolute top-24 right-0 animate-float-b" />
-              <FloatingCard icon={<Sparkles size={22} />} title="Premium Quality" desc="Enterprise-grade execution" className="absolute bottom-8 left-12 animate-float-c" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/8 rounded-full blur-[80px]" />
-            </div>
-          </motion.div>
+          <div className="hidden lg:flex flex-col gap-5">
+            {[
+              { icon: <Target size={22} />, title: "Results-Focused", desc: "Strategy that drives growth", delay: 0.2 },
+              { icon: <Zap size={22} />, title: "Fast & Reliable", desc: "On-time, every time", delay: 0.3 },
+              { icon: <Sparkles size={22} />, title: "Premium Quality", desc: "Enterprise-grade execution", delay: 0.4 },
+            ].map((card) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: card.delay, ease: "easeOut" }}
+                className="bg-card/60 backdrop-blur-xl border border-border/40 rounded-2xl p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.25)] hover:border-primary/30"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">{card.icon}</div>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">{card.title}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{card.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
-const FloatingCard = ({ icon, title, desc, className }: { icon: React.ReactNode; title: string; desc: string; className?: string }) => (
-  <div className={`bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl p-6 w-72 will-change-transform transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.2)] hover:border-primary/20 ${className}`}>
-    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-3">{icon}</div>
-    <p className="font-bold text-sm text-foreground">{title}</p>
-    <p className="text-xs text-muted-foreground mt-1">{desc}</p>
-  </div>
-);
 
 export default HeroSection;
