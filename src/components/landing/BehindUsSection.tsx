@@ -24,6 +24,11 @@ const BehindUsSection = () => (
           </p>
         </motion.div>
 
+        <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
+          className="mb-12 rounded-2xl overflow-hidden border border-primary/10 shadow-lg">
+          <img src={workspaceImg} alt="Makes & Made creative workspace" loading="lazy" width={1280} height={720} className="w-full h-auto object-cover" />
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {values.map((v, i) => (
             <motion.div key={v.title} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
