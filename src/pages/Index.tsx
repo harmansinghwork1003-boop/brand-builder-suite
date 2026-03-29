@@ -6,6 +6,8 @@ import ServicesSection from "@/components/landing/ServicesSection";
 import PortfolioSection from "@/components/landing/PortfolioSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import StatsSection from "@/components/landing/StatsSection";
+import BehindUsSection from "@/components/landing/BehindUsSection";
+import ClientExperienceSection from "@/components/landing/ClientExperienceSection";
 import DashboardSection from "@/components/landing/DashboardSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ContactSection from "@/components/landing/ContactSection";
@@ -19,8 +21,10 @@ const Index = () => (
     <WhyUsSection />
     <ServicesSection />
     <PortfolioSection />
-    <ProcessSection />
     <StatsSection />
+    <BehindUsSection />
+    <ClientExperienceSection />
+    <ProcessSection />
     <DashboardSection />
     <TestimonialsSection />
     <ContactSection />
