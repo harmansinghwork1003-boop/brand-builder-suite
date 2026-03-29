@@ -7,49 +7,48 @@ import Footer from "@/components/landing/Footer";
 
 const packages = [
   {
-    name: "Starter",
-    price: "₹4,999",
+    name: "Basic Lite",
+    price: "₹10,000",
     period: "/month",
-    features: ["8 Posts/Month", "Basic Graphics", "1 Platform", "Monthly Report"],
-  },
-  {
-    name: "Basic",
-    price: "₹7,999",
-    period: "/month",
-    features: ["12 Posts/Month", "Custom Graphics", "2 Platforms", "4 Reels/Month", "Monthly Report"],
+    features: ["1 Platform (Instagram or Facebook)", "12 Professional Posts/Month", "4 Reels / Short Videos", "Caption Writing + Hashtag Research", "Page/Profile Optimization", "Monthly Content Calendar", "Basic Comment Monitoring", "Monthly Performance Report"],
   },
   {
     name: "Basic Plus",
-    price: "₹11,999",
+    price: "₹12,000",
     period: "/month",
-    badge: "Popular",
-    features: ["16 Posts/Month", "Custom Graphics", "2 Platforms", "8 Reels/Month", "Story Management", "Engagement Strategy", "Bi-weekly Report"],
+    features: ["2 Platforms (Instagram + Facebook)", "14 Professional Posts/Month", "6 Reels / Short Videos", "Caption Writing + Hashtag Strategy", "Profile Optimization + Highlights Setup", "Highlights Management", "Basic Engagement Monitoring", "Monthly Analytics Report", "Content Planning Support"],
   },
   {
-    name: "Standard",
-    price: "₹15,999",
+    name: "Growth Standard",
+    price: "₹14,000",
     period: "/month",
-    features: ["20 Posts/Month", "Premium Graphics", "3 Platforms", "12 Reels/Month", "Story Management", "Hashtag Strategy", "Community Management", "Weekly Report"],
+    features: ["2 Platforms", "16 Professional Posts/Month", "8 Reels / Short Videos", "Professional Graphic Design", "Advanced Hashtag Strategy", "Content Calendar Planning", "Engagement Management", "Competitor Analysis", "Highlights Management", "Monthly Performance Report"],
+  },
+  {
+    name: "Growth Advanced",
+    price: "₹16,000",
+    period: "/month",
+    features: ["3 Platforms (IG, FB, LinkedIn/Twitter)", "20 Professional Posts/Month", "10 Reels / Short Videos", "Professional Graphics & Creatives", "Advanced Caption + Hashtag Strategy", "Content Calendar & Strategy Planning", "Competitor Research & Market Insights", "Engagement & Comment Management", "Profile Optimization & Brand Consistency", "Monthly Analytics Report"],
+  },
+  {
+    name: "Premium Pro",
+    price: "₹19,000",
+    period: "/month",
+    features: ["3 Platforms", "24 Premium Posts/Month", "12 High-Quality Reels / Videos", "Advanced Graphic Design & Brand Visuals", "Professional Video Editing", "Strategic Content Calendar", "Competitor Analysis & Market Insights", "Audience Insights Analysis", "Monthly Growth Report", "Monthly Strategy Consultation"],
   },
   {
     name: "Premium Elite",
-    price: "₹21,999",
+    price: "₹23,000",
     period: "/month",
     badge: "Most Popular",
-    features: ["25 Posts/Month", "Premium Graphics & Video", "3 Platforms", "16 Reels/Month", "Full Story Management", "Influencer Collaboration", "Ad Strategy", "Detailed Analytics", "Priority Support"],
+    features: ["4 Platforms", "35 Premium Posts/Month", "20 High-Quality Reels / Videos", "Advanced Graphics & Premium Visuals", "Professional Video Editing", "Strategic Content Planning", "Competitor & Market Research", "Engagement Management", "Advanced Hashtag & Keyword Strategy", "Brand Positioning Consultation", "Facebook & Instagram Ads Setup", "Ad Campaign Creation & Targeting", "Monthly Ad Performance Report", "(Ad spend paid separately)"],
   },
   {
-    name: "Business",
-    price: "₹29,999",
+    name: "Business Package",
+    price: "₹30,000",
     period: "/month",
     badge: "Premium",
-    features: ["30 Posts/Month", "Premium Content Suite", "4 Platforms", "20 Reels/Month", "Full Management", "Paid Ad Management", "Brand Strategy", "Competitor Analysis", "Dedicated Manager", "24/7 Support"],
-  },
-  {
-    name: "Custom Enterprise",
-    price: "Contact Us",
-    period: "",
-    features: ["Unlimited Posts", "All Platforms", "Custom Strategy", "Dedicated Team", "White-Label Options", "Custom Reporting"],
+    features: ["All Major Platforms (IG, FB, LinkedIn, X, YouTube)", "45–50 Premium Posts/Month", "25+ High-Quality Reels / Videos", "Complete Branding & Graphic Design", "Professional Video Editing", "Full Content Strategy & Campaigns", "FB & IG Ads Management", "Influencer Collaboration Strategy", "Weekly Analytics Tracking", "Monthly Growth Report", "Highlights Design & Management", "Brand Visual Identity Management", "Dedicated Account Manager", "Priority Support", "Monthly Strategy Meeting"],
   },
 ];
 
@@ -100,7 +99,6 @@ const SMMPricing = () => (
       </div>
     </section>
 
-    {/* CTA */}
     <section className="py-16 bg-primary/5 border-y border-primary/10">
       <div className="container text-center">
         <h2 className="text-2xl font-bold text-foreground mb-4">Not Sure Which Plan?</h2>

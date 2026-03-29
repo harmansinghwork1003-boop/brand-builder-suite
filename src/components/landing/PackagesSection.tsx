@@ -3,13 +3,13 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const packages = [
-  { name: "Starter", price: "₹4,999", period: "/mo", features: ["5 Posts/Month", "1 Platform", "Basic Graphics", "Monthly Report"], popular: false },
-  { name: "Basic", price: "₹9,999", period: "/mo", features: ["15 Posts/Month", "2 Platforms", "Custom Graphics", "Hashtag Strategy", "Monthly Report"], popular: false },
-  { name: "Standard", price: "₹14,999", period: "/mo", features: ["20 Posts/Month", "3 Platforms", "Reels & Stories", "Community Management", "Bi-weekly Report"], popular: false },
-  { name: "Professional", price: "₹24,999", period: "/mo", features: ["30 Posts/Month", "4 Platforms", "Video Content", "Ad Management", "Influencer Outreach", "Weekly Report"], popular: true },
-  { name: "Premium", price: "₹39,999", period: "/mo", features: ["Unlimited Posts", "All Platforms", "Full Video Production", "Paid Ad Strategy", "Dedicated Manager", "Priority Support"], popular: false },
-  { name: "Enterprise", price: "₹59,999", period: "/mo", features: ["Custom Content Strategy", "All Platforms", "Brand Partnerships", "Complete Analytics", "24/7 Support", "Monthly Review Call"], popular: false },
-  { name: "Custom", price: "Custom", period: "", features: ["Tailored to Your Needs", "Flexible Scope", "Dedicated Team", "Custom Reporting", "SLA Guaranteed"], popular: false },
+  { name: "Basic Lite", price: "₹10,000", period: "/mo", features: ["12 Posts/Month", "1 Platform", "4 Reels", "Hashtag Research", "Monthly Report"], popular: false },
+  { name: "Basic Plus", price: "₹12,000", period: "/mo", features: ["14 Posts/Month", "2 Platforms", "6 Reels", "Hashtag Strategy", "Highlights Management", "Analytics Report"], popular: false },
+  { name: "Growth Standard", price: "₹14,000", period: "/mo", features: ["16 Posts/Month", "2 Platforms", "8 Reels", "Competitor Analysis", "Engagement Management", "Monthly Report"], popular: false },
+  { name: "Growth Advanced", price: "₹16,000", period: "/mo", features: ["20 Posts/Month", "3 Platforms", "10 Reels", "Market Insights", "Brand Consistency", "Monthly Analytics"], popular: false },
+  { name: "Premium Pro", price: "₹19,000", period: "/mo", features: ["24 Premium Posts/Month", "3 Platforms", "12 Reels", "Video Editing", "Strategy Consultation", "Growth Report"], popular: false },
+  { name: "Premium Elite", price: "₹23,000", period: "/mo", features: ["35 Premium Posts/Month", "4 Platforms", "20 Reels", "FB & IG Ads Setup", "Brand Positioning", "Ad Performance Report"], popular: true },
+  { name: "Business Package", price: "₹30,000", period: "/mo", features: ["45–50 Posts/Month", "All Platforms", "25+ Reels", "Full Ads Management", "Dedicated Manager", "Priority Support"], popular: false },
 ];
 
 const PackagesSection = () => (
