@@ -18,6 +18,9 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Chatbot from "./components/Chatbot";
 import SocialMediaCampaign from "./pages/portfolio/SocialMediaCampaign";
+import ECommercePlatform from "./pages/portfolio/ECommercePlatform";
+import RestaurantApp from "./pages/portfolio/RestaurantApp";
+import SaasDashboard from "./pages/portfolio/SaasDashboard";
 
 const queryClient = new QueryClient();
 
