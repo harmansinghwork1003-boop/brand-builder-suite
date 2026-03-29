@@ -20,9 +20,9 @@ const PortfolioSection = () => (
       <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-16">
         <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Our Work</p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
-          Portfolio <span className="gradient-text">Preview</span>
+          Work Delivered <span className="gradient-text">for Brands</span>
         </h2>
-        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">A glimpse of the results we've delivered for our clients.</p>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Real projects, real results — here's what we've built for businesses serious about growth.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">

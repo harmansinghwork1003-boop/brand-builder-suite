@@ -13,6 +13,12 @@ const StatsSection = () => (
   <section className="py-20 bg-primary/5 border-y border-primary/10 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
     <div className="container relative">
+      <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ duration: 0.4, ease: "easeOut" }} className="text-center mb-10">
+        <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Track Record</p>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
+          Results We <span className="gradient-text">Deliver</span>
+        </h2>
+      </motion.div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
         {stats.map((s, i) => (
           <motion.div key={s.label} initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
