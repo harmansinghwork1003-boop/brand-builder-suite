@@ -57,6 +57,9 @@ const App = () => (
             <Route path="/services/social-media-management/pricing" element={<SMMPricing />} />
             <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
             <Route path="/portfolio/social-media-campaign" element={<SocialMediaCampaign />} />
+            <Route path="/portfolio/e-commerce-platform" element={<ECommercePlatform />} />
+            <Route path="/portfolio/restaurant-app" element={<RestaurantApp />} />
+            <Route path="/portfolio/saas-dashboard" element={<SaasDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
