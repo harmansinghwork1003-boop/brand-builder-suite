@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import socialMediaMockup from "@/assets/portfolio-social-media.jpg";
+import ecommerceMockup from "@/assets/portfolio-ecommerce.jpg";
+import restaurantMockup from "@/assets/portfolio-restaurant.jpg";
+import saasMockup from "@/assets/portfolio-saas.jpg";
 
 const projects = [
-  { title: "Social Media Brand Campaign", category: "Social Media", gradient: "from-primary/25 to-accent", href: "/portfolio/social-media-campaign", featured: true },
-  { title: "E-Commerce Platform", category: "Website", gradient: "from-primary/20 to-primary/5", href: "/portfolio/e-commerce-platform" },
-  { title: "Restaurant App UI", category: "App", gradient: "from-accent to-primary/10", href: "/portfolio/restaurant-app" },
-  { title: "SaaS Dashboard", category: "Website", gradient: "from-primary/15 to-secondary", href: "/portfolio/saas-dashboard" },
+  { title: "Social Media Brand Campaign", category: "Social Media", gradient: "from-primary/25 to-accent", href: "/portfolio/social-media-campaign", featured: true, image: socialMediaMockup },
+  { title: "E-Commerce Platform", category: "Website", gradient: "from-primary/20 to-primary/5", href: "/portfolio/e-commerce-platform", image: ecommerceMockup },
+  { title: "Restaurant App UI", category: "App", gradient: "from-accent to-primary/10", href: "/portfolio/restaurant-app", image: restaurantMockup },
+  { title: "SaaS Dashboard", category: "Website", gradient: "from-primary/15 to-secondary", href: "/portfolio/saas-dashboard", image: saasMockup },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
