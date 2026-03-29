@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Users, Lightbulb } from "lucide-react";
+import workspaceImg from "@/assets/workspace.jpg";
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
@@ -21,6 +22,11 @@ const BehindUsSection = () => (
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
             We're a small, focused team that believes great digital work comes from genuine partnerships — not assembly lines. Every client gets our full attention, creativity, and commitment.
           </p>
+        </motion.div>
+
+        <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
+          className="mb-12 rounded-2xl overflow-hidden border border-primary/10 shadow-lg">
+          <img src={workspaceImg} alt="Makes & Made creative workspace" loading="lazy" width={1280} height={720} className="w-full h-auto object-cover" />
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
