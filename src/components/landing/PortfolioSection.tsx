@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const projects = [
   { title: "Social Media Brand Campaign", category: "Social Media", gradient: "from-primary/25 to-accent", href: "/portfolio/social-media-campaign", featured: true },
-  { title: "E-Commerce Platform", category: "Website", gradient: "from-primary/20 to-primary/5" },
-  { title: "Restaurant App UI", category: "App", gradient: "from-accent to-primary/10" },
-  { title: "SaaS Dashboard", category: "Website", gradient: "from-primary/15 to-secondary" },
+  { title: "E-Commerce Platform", category: "Website", gradient: "from-primary/20 to-primary/5", href: "/portfolio/e-commerce-platform" },
+  { title: "Restaurant App UI", category: "App", gradient: "from-accent to-primary/10", href: "/portfolio/restaurant-app" },
+  { title: "SaaS Dashboard", category: "Website", gradient: "from-primary/15 to-secondary", href: "/portfolio/saas-dashboard" },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };

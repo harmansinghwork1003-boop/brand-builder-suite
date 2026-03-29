@@ -18,6 +18,9 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Chatbot from "./components/Chatbot";
 import SocialMediaCampaign from "./pages/portfolio/SocialMediaCampaign";
+import ECommercePlatform from "./pages/portfolio/ECommercePlatform";
+import RestaurantApp from "./pages/portfolio/RestaurantApp";
+import SaasDashboard from "./pages/portfolio/SaasDashboard";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +57,9 @@ const App = () => (
             <Route path="/services/social-media-management/pricing" element={<SMMPricing />} />
             <Route path="/services/website-development/pricing" element={<WebsitePricing />} />
             <Route path="/portfolio/social-media-campaign" element={<SocialMediaCampaign />} />
+            <Route path="/portfolio/e-commerce-platform" element={<ECommercePlatform />} />
+            <Route path="/portfolio/restaurant-app" element={<RestaurantApp />} />
+            <Route path="/portfolio/saas-dashboard" element={<SaasDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
