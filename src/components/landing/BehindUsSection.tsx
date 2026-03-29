@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Users, Lightbulb } from "lucide-react";
+import workspaceImg from "@/assets/workspace.jpg";
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
