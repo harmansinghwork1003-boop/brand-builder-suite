@@ -4,9 +4,9 @@ import { Heart, Users, Lightbulb } from "lucide-react";
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
 const values = [
-  { icon: Heart, title: "Passion-Driven", desc: "Every project is treated as our own — we care deeply about your success." },
+  { icon: Heart, title: "Passion-Driven", desc: "Every project is treated as our own. we care deeply about your success." },
   { icon: Users, title: "Close Collaboration", desc: "We work alongside you, not just for you. Your vision drives every decision." },
-  { icon: Lightbulb, title: "Solution-First Thinking", desc: "We don't just build — we solve real business problems with digital systems." },
+  { icon: Lightbulb, title: "Solution-First Thinking", desc: "We don't just build. we solve real business problems with digital systems." },
 ];
 
 const BehindUsSection = () => (

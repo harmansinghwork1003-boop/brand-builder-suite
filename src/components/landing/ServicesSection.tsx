@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Globe, Megaphone, Search, Smartphone, ArrowRight, Video, Palette, ShieldCheck, Headphones } from "lucide-react";
 
 const coreServices = [
-  { icon: Globe, title: "Revenue-Driven Websites", desc: "High-converting websites engineered to turn visitors into paying customers — not just look good.", href: "/services/website-development" },
+  { icon: Globe, title: "Revenue-Driven Websites", desc: "High-converting websites engineered to turn visitors into paying customers. not just look good.", href: "/services/website-development" },
   { icon: Megaphone, title: "Growth-Focused Social Media", desc: "End-to-end content strategy, creation, and management that builds your brand and drives engagement.", href: "/services/social-media-management" },
-  { icon: Search, title: "Search Dominance (SEO)", desc: "Data-backed SEO strategies that put you on page one and keep you there — driving organic revenue.", href: "/services/seo" },
+  { icon: Search, title: "Search Dominance (SEO)", desc: "Data-backed SEO strategies that put you on page one and keep you there. driving organic revenue.", href: "/services/seo" },
   { icon: Smartphone, title: "Custom App Solutions", desc: "Scalable Android & iOS applications designed for performance, retention, and business impact.", href: "/services/app-development" },
 ];
 

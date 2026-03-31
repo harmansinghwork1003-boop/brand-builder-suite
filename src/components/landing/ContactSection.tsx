@@ -46,8 +46,8 @@ const ContactSection = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
             Stop Losing Customers to <span className="gradient-text">Weak Digital Presence</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Book a free consultation — we'll audit your digital presence and show you exactly where revenue is hiding.</p>
-          <p className="text-primary/70 mt-2 text-sm font-medium">Limited slots available each month — we keep our client list small for quality.</p>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Book a free consultation. we'll audit your digital presence and show you exactly where revenue is hiding.</p>
+          <p className="text-primary/70 mt-2 text-sm font-medium">Limited slots available each month. we keep our client list small for quality.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">

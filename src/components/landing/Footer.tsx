@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <p className="text-xl font-extrabold text-foreground mb-4">Makes & Made<span className="text-primary"> Developers</span></p>
-          <p className="text-sm text-muted-foreground leading-relaxed">We don't just build — we deliver results that grow your business.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">We don't just build. we deliver results that grow your business.</p>
         </div>
         <div>
           <p className="font-bold text-foreground mb-4">Services</p>
