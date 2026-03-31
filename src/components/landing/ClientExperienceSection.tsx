@@ -5,11 +5,11 @@ const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
 const experiences = [
   { icon: ShieldCheck, title: "Premium Quality", desc: "Every deliverable goes through rigorous quality checks before reaching you." },
-  { icon: MessageCircle, title: "Clear Communication", desc: "Regular updates, transparent timelines, and no surprises — ever." },
-  { icon: Clock, title: "On-Time Delivery", desc: "We respect your time. Deadlines aren't suggestions — they're commitments." },
+  { icon: MessageCircle, title: "Clear Communication", desc: "Regular updates, transparent timelines, and no surprises ever." },
+  { icon: Clock, title: "On-Time Delivery", desc: "We respect your time. Deadlines aren't suggestions. they're commitments." },
   { icon: Sparkles, title: "Free Consultation", desc: "Every project starts with a free strategy session to align on goals." },
   { icon: Eye, title: "Transparent Workflow", desc: "Full visibility into progress with shared boards and milestone tracking." },
-  { icon: Phone, title: "Dedicated Support", desc: "Direct access to your project lead — no ticket queues or chatbots." },
+  { icon: Phone, title: "Dedicated Support", desc: "Direct access to your project lead. no ticket queues or chatbots." },
 ];
 
 const ClientExperienceSection = () => (

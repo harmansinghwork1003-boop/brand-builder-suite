@@ -22,7 +22,7 @@ const PortfolioSection = () => (
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           Work Delivered <span className="gradient-text">for Brands</span>
         </h2>
-        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Real projects, real results — here's what we've built for businesses serious about growth.</p>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">Real projects, real results. here's what we've built for businesses serious about growth.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">

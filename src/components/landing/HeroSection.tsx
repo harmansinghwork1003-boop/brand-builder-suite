@@ -35,7 +35,7 @@ const HeroSection = () => {
 
             <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed">
-              Strategy-first development, marketing, and automation — engineered to deliver measurable ROI, not just a website.
+              Strategy-first development, marketing, and automation engineered to deliver measurable ROI, not just a website.
             </motion.p>
 
             <div className="flex flex-wrap gap-4 mb-8">

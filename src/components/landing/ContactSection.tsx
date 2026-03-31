@@ -77,7 +77,7 @@ const ContactSection = () => {
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }} className="lg:col-span-2 space-y-6">
             {[
               { icon: Mail, label: "Email", value: "contact@makesandmade.com" },
-              { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+              { icon: Phone, label: "Phone", value: "+91 93103 84801" },
               { icon: MapPin, label: "Location", value: "India" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">

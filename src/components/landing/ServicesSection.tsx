@@ -28,7 +28,7 @@ const ServicesSection = () => (
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           Services That <span className="gradient-text">Drive Growth</span>
         </h2>
-        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">From development to marketing — everything your business needs to succeed online.</p>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">From development to marketing. everything your business needs to succeed online.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">

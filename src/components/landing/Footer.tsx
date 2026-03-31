@@ -30,7 +30,7 @@ const Footer = () => (
           <p className="font-bold text-foreground mb-4">Contact</p>
           <div className="space-y-3 text-sm text-muted-foreground">
             <p>contact@makesandmade.com</p>
-            <p>+91 98765 43210</p>
+            <p>+91 93103 84801</p>
             <p>India</p>
           </div>
         </div>

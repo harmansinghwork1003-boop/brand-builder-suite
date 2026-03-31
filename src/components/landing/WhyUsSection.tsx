@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Shield, MessageSquare, Clock, Eye, HeartHandshake } from "lucide-react";
 
 const reasons = [
-  { icon: Shield, title: "Quality-First Execution", desc: "Every project is built with precision and attention to detail — no shortcuts." },
+  { icon: Shield, title: "Quality-First Execution", desc: "Every project is built with precision and attention to detail no shortcuts." },
   { icon: Eye, title: "Research-Based Strategy", desc: "We analyze your market, audience, and competitors before writing a single line of code." },
   { icon: Clock, title: "On-Time Delivery", desc: "Deadlines aren't optional. We deliver every project on schedule, every time." },
   { icon: MessageSquare, title: "Professional Communication", desc: "Clear updates, transparent workflow, and responsive support throughout." },
-  { icon: HeartHandshake, title: "Results-Focused Approach", desc: "We don't just build — we ensure our solutions drive real business growth." },
+  { icon: HeartHandshake, title: "Results-Focused Approach", desc: "We don't just build. we ensure our solutions drive real business growth." },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };

@@ -19,7 +19,7 @@ const BehindUsSection = () => (
             Behind <span className="gradient-text">Makes & Made</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-            We're a small, focused team that believes great digital work comes from genuine partnerships — not assembly lines. Every client gets our full attention, creativity, and commitment.
+            We're a small, focused team that believes great digital work comes from genuine partnerships. not assembly lines. Every client gets our full attention, creativity, and commitment.
           </p>
         </motion.div>
 

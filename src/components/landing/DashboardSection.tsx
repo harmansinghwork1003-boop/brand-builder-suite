@@ -21,7 +21,7 @@ const DashboardSection = () => (
           Full Visibility, <span className="gradient-text">Total Control</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-          Every client gets a dedicated dashboard — track progress, approve content, view reports, and access documents. No follow-ups needed.
+          Every client gets a dedicated dashboard. track progress, approve content, view reports, and access documents. No follow-ups needed.
         </p>
       </motion.div>
 
