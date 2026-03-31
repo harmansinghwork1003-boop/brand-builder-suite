@@ -4,9 +4,9 @@ import { Heart, Users, Lightbulb } from "lucide-react";
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
 const values = [
-  { icon: Heart, title: "Passion-Driven", desc: "Every project is treated as our own — we care deeply about your success." },
+  { icon: Heart, title: "Passion-Driven", desc: "Every project is treated as our own. we care deeply about your success." },
   { icon: Users, title: "Close Collaboration", desc: "We work alongside you, not just for you. Your vision drives every decision." },
-  { icon: Lightbulb, title: "Solution-First Thinking", desc: "We don't just build — we solve real business problems with digital systems." },
+  { icon: Lightbulb, title: "Solution-First Thinking", desc: "We don't just build. we solve real business problems with digital systems." },
 ];
 
 const BehindUsSection = () => (
@@ -19,7 +19,7 @@ const BehindUsSection = () => (
             Behind <span className="gradient-text">Makes & Made</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-            We're a small, focused team that believes great digital work comes from genuine partnerships — not assembly lines. Every client gets our full attention, creativity, and commitment.
+            We're a small, focused team that believes great digital work comes from genuine partnerships. not assembly lines. Every client gets our full attention, creativity, and commitment.
           </p>
         </motion.div>
 

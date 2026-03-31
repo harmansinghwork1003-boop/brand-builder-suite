@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Globe, Megaphone, Search, Smartphone, ArrowRight, Video, Palette, ShieldCheck, Headphones } from "lucide-react";
 
 const coreServices = [
-  { icon: Globe, title: "Revenue-Driven Websites", desc: "High-converting websites engineered to turn visitors into paying customers — not just look good.", href: "/services/website-development" },
+  { icon: Globe, title: "Revenue-Driven Websites", desc: "High-converting websites engineered to turn visitors into paying customers. not just look good.", href: "/services/website-development" },
   { icon: Megaphone, title: "Growth-Focused Social Media", desc: "End-to-end content strategy, creation, and management that builds your brand and drives engagement.", href: "/services/social-media-management" },
-  { icon: Search, title: "Search Dominance (SEO)", desc: "Data-backed SEO strategies that put you on page one and keep you there — driving organic revenue.", href: "/services/seo" },
+  { icon: Search, title: "Search Dominance (SEO)", desc: "Data-backed SEO strategies that put you on page one and keep you there. driving organic revenue.", href: "/services/seo" },
   { icon: Smartphone, title: "Custom App Solutions", desc: "Scalable Android & iOS applications designed for performance, retention, and business impact.", href: "/services/app-development" },
 ];
 
@@ -28,7 +28,7 @@ const ServicesSection = () => (
         <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground">
           Services That <span className="gradient-text">Drive Growth</span>
         </h2>
-        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">From development to marketing — everything your business needs to succeed online.</p>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">From development to marketing. everything your business needs to succeed online.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">

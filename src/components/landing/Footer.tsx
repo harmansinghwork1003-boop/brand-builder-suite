@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <p className="text-xl font-extrabold text-foreground mb-4">Makes & Made<span className="text-primary"> Developers</span></p>
-          <p className="text-sm text-muted-foreground leading-relaxed">We don't just build — we deliver results that grow your business.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">We don't just build. we deliver results that grow your business.</p>
         </div>
         <div>
           <p className="font-bold text-foreground mb-4">Services</p>
@@ -30,7 +30,7 @@ const Footer = () => (
           <p className="font-bold text-foreground mb-4">Contact</p>
           <div className="space-y-3 text-sm text-muted-foreground">
             <p>contact@makesandmade.com</p>
-            <p>+91 98765 43210</p>
+            <p>+91 93103 84801</p>
             <p>India</p>
           </div>
         </div>

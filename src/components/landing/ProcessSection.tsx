@@ -5,7 +5,7 @@ const steps = [
   { icon: Lightbulb, title: "Understanding & Strategy", desc: "We research your market, audience, and goals to build a tailored strategy." },
   { icon: Layout, title: "Planning & Design", desc: "Wireframes, mockups, and a clear project plan before any code is written." },
   { icon: Code2, title: "Development & Execution", desc: "Clean, scalable code built with modern tech and best practices." },
-  { icon: Rocket, title: "Delivery & Optimization", desc: "Launch, test, optimize — and ongoing support to keep things running." },
+  { icon: Rocket, title: "Delivery & Optimization", desc: "Launch, test, optimize. and ongoing support to keep things running." },
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
