@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, User, BarChart3, FileText, Image, Bell, Mail, Phone, Clock, Trash2 } from "lucide-react";
+import { LogOut, User, BarChart3, FileText, Bell, Mail, Clock, Trash2 } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
