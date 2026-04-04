@@ -3,12 +3,41 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, User, BarChart3, FileText, Image, Bell } from "lucide-react";
+import { LogOut, User, BarChart3, FileText, Image, Bell, Mail, Phone, Clock, Trash2 } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
+import { format } from "date-fns";
 
 const Dashboard = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  const { data: leads = [], isLoading: leadsLoading } = useQuery({
+    queryKey: ["leads"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("leads")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  const deleteLead = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("leads").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["leads"] });
+      toast({ title: "Lead deleted" });
+    },
+  });
 
   const handleSignOut = async () => {
     await signOut();
@@ -23,7 +52,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-xl">
         <div className="container flex items-center justify-between h-16">
           <Link to="/" className="text-lg font-bold text-foreground">
@@ -39,7 +67,6 @@ const Dashboard = () => {
       </header>
 
       <main className="container py-8 space-y-8">
-        {/* Welcome */}
         <div>
           <h1 className="text-3xl font-bold">Welcome, {displayName}</h1>
           <p className="text-muted-foreground mt-1">Here's your project overview</p>
@@ -48,9 +75,9 @@ const Dashboard = () => {
         {/* Stats grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icon: BarChart3, label: "Active Plan", value: "Starter", color: "text-primary" },
-            { icon: FileText, label: "Reports", value: "3 Available", color: "text-green-500" },
-            { icon: Image, label: "Content Items", value: "12", color: "text-blue-500" },
+            { icon: Mail, label: "Total Leads", value: String(leads.length), color: "text-primary" },
+            { icon: BarChart3, label: "Active Plan", value: "Starter", color: "text-green-500" },
+            { icon: FileText, label: "Reports", value: "3 Available", color: "text-blue-500" },
             { icon: Bell, label: "Updates", value: "2 New", color: "text-amber-500" },
           ].map((stat) => (
             <Card key={stat.label} className="border-border/60">
@@ -67,9 +94,69 @@ const Dashboard = () => {
           ))}
         </div>
 
+        {/* Leads Table */}
+        <Card className="border-border/60">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Mail className="h-5 w-5 text-primary" /> Contact Form Submissions
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {leadsLoading ? (
+              <p className="text-muted-foreground text-sm">Loading leads...</p>
+            ) : leads.length === 0 ? (
+              <p className="text-muted-foreground text-sm">No submissions yet. Leads will appear here when visitors fill out the contact form.</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border/60 text-left">
+                      <th className="pb-3 font-medium text-muted-foreground">Name</th>
+                      <th className="pb-3 font-medium text-muted-foreground">Email</th>
+                      <th className="pb-3 font-medium text-muted-foreground hidden md:table-cell">Phone</th>
+                      <th className="pb-3 font-medium text-muted-foreground hidden lg:table-cell">Service</th>
+                      <th className="pb-3 font-medium text-muted-foreground hidden xl:table-cell">Message</th>
+                      <th className="pb-3 font-medium text-muted-foreground">Date</th>
+                      <th className="pb-3 font-medium text-muted-foreground"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leads.map((lead: any) => (
+                      <tr key={lead.id} className="border-b border-border/30 hover:bg-muted/30 transition-colors">
+                        <td className="py-3 pr-4 font-medium">{lead.name}</td>
+                        <td className="py-3 pr-4 text-muted-foreground">{lead.email}</td>
+                        <td className="py-3 pr-4 text-muted-foreground hidden md:table-cell">{lead.phone || "—"}</td>
+                        <td className="py-3 pr-4 hidden lg:table-cell">
+                          {lead.service ? <Badge variant="secondary" className="text-xs">{lead.service}</Badge> : "—"}
+                        </td>
+                        <td className="py-3 pr-4 text-muted-foreground hidden xl:table-cell max-w-[200px] truncate">{lead.message}</td>
+                        <td className="py-3 pr-4 text-muted-foreground text-xs whitespace-nowrap">
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            {format(new Date(lead.created_at), "MMM d, yyyy")}
+                          </div>
+                        </td>
+                        <td className="py-3">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
+                            onClick={() => deleteLead.mutate(lead.id)}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
         {/* Main content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Progress */}
           <Card className="lg:col-span-2 border-border/60">
             <CardHeader>
               <CardTitle className="text-lg">Work Progress</CardTitle>
@@ -91,7 +178,6 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-          {/* Profile */}
           <Card className="border-border/60">
             <CardHeader>
               <CardTitle className="text-lg">Profile</CardTitle>
@@ -119,25 +205,6 @@ const Dashboard = () => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Recent content */}
-        <Card className="border-border/60">
-          <CardHeader>
-            <CardTitle className="text-lg">Content Preview</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square rounded-xl bg-muted/50 border border-border/40 flex items-center justify-center"
-                >
-                  <Image className="h-8 w-8 text-muted-foreground/40" />
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </main>
     </div>
   );
