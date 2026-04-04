@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const serviceOptions = [
   "Website Development",
@@ -27,14 +28,27 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const { error } = await supabase.from("leads").insert({
+      name: (formData.get("name") as string).trim(),
+      email: (formData.get("email") as string).trim(),
+      phone: (formData.get("phone") as string)?.trim() || null,
+      service: (formData.get("service") as string) || null,
+      message: (formData.get("message") as string).trim(),
+    });
+
+    setLoading(false);
+    if (error) {
+      toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+    } else {
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      form.reset();
+    }
   };
 
   return (
