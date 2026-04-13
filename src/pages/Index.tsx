@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import WhyUsSection from "@/components/landing/WhyUsSection";
 import ServicesSection from "@/components/landing/ServicesSection";
-
+import PortfolioSection from "@/components/landing/PortfolioSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import StatsSection from "@/components/landing/StatsSection";
 import BehindUsSection from "@/components/landing/BehindUsSection";
@@ -20,7 +20,7 @@ const Index = () => (
     <HeroSection />
     <WhyUsSection />
     <ServicesSection />
-    
+    <PortfolioSection />
     <StatsSection />
     <BehindUsSection />
     <ClientExperienceSection />
