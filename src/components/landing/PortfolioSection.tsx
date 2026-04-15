@@ -144,9 +144,13 @@ const portfolioCategories = [
     name: "Personal Branding",
     images: [
       "https://i.pinimg.com/1200x/52/b4/09/52b409ba86ea9e31027cc31c391de442.jpg",
+      "/videos/personal-branding-1.mp4",
       "https://i.pinimg.com/736x/a4/bb/7d/a4bb7dd0fb40ebd9a23ff9dcea4afc47.jpg",
+      "/videos/personal-branding-2.mp4",
       "https://i.pinimg.com/736x/a2/2b/8d/a22b8df0357f4d4e0cb6038f2da0ca34.jpg",
+      "/videos/personal-branding-3.mp4",
       "https://i.pinimg.com/736x/e6/a5/aa/e6a5aaabb5bd0727c600d79e1901e463.jpg",
+      "/videos/personal-branding-4.mp4",
       "https://i.pinimg.com/736x/62/eb/a9/62eba928d8524bdf810e892b6d7ed196.jpg",
     ],
   },
@@ -211,8 +215,12 @@ const PortfolioSection = () => {
                 </button>
               </div>
               <div className="columns-2 md:columns-3 gap-4 space-y-4">
-                {activeCategory.images.map((img, idx) => (
-                  <img key={idx} src={img} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full rounded-lg break-inside-avoid" />
+                {activeCategory.images.map((src, idx) => (
+                  src.endsWith('.mp4') ? (
+                    <video key={idx} src={src} controls playsInline className="w-full rounded-lg break-inside-avoid" />
+                  ) : (
+                    <img key={idx} src={src} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full rounded-lg break-inside-avoid" />
+                  )
                 ))}
               </div>
             </div>
