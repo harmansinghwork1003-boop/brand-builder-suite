@@ -113,6 +113,7 @@ const portfolioCategories = [
       "https://i.pinimg.com/1200x/47/fa/0c/47fa0c80ad5c5d7cea4567739549798f.jpg",
       "https://i.pinimg.com/736x/10/67/5c/10675c8563ac3e8dfb59bfd0274c5ccf.jpg",
       "https://i.pinimg.com/1200x/ce/28/bd/ce28bdacce737650bac660095bfbb707.jpg",
+      "/videos/fashion-2.mp4",
       "https://i.pinimg.com/736x/02/5e/15/025e15303104a64910e12189b96a383b.jpg",
       "https://i.pinimg.com/1200x/fa/c6/11/fac611cd46ac95127d507094ed621a22.jpg",
       "https://i.pinimg.com/1200x/6d/06/d5/6d06d535c61986f32179039e1b8322f1.jpg",
