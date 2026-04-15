@@ -215,8 +215,12 @@ const PortfolioSection = () => {
                 </button>
               </div>
               <div className="columns-2 md:columns-3 gap-4 space-y-4">
-                {activeCategory.images.map((img, idx) => (
-                  <img key={idx} src={img} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full rounded-lg break-inside-avoid" />
+                {activeCategory.images.map((src, idx) => (
+                  src.endsWith('.mp4') ? (
+                    <video key={idx} src={src} controls playsInline className="w-full rounded-lg break-inside-avoid" />
+                  ) : (
+                    <img key={idx} src={src} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full rounded-lg break-inside-avoid" />
+                  )
                 ))}
               </div>
             </div>
