@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Megaphone, FileText, Video, BarChart3, Users, X } from "lucide-react";
+import { ArrowRight, Megaphone, FileText, Video, BarChart3, Users } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
