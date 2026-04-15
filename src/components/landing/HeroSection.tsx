@@ -1,7 +1,12 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Target, Zap, CheckCircle2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import teamOffice from "@/assets/team-office.png";
+import designerWorking from "@/assets/designer-working.png";
+import happyClient from "@/assets/happy-client.png";
 
 const trustPoints = [
   "On-time delivery guarantee",
@@ -9,16 +14,60 @@ const trustPoints = [
   "Dedicated project manager",
 ];
 
+const bgImages = [teamOffice, designerWorking, happyClient];
+
 const HeroSection = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bgImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+    <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
+      {/* Background image slideshow */}
+      {bgImages.map((img, i) => (
+        <motion.div
+          key={i}
+          initial={false}
+          animate={{ opacity: currentSlide === i ? 1 : 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${img})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: 0,
+          }}
+        />
+      ))}
 
-      <div className="container relative">
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-background/80 dark:bg-background/85 z-[1]" />
+
+      {/* Dot pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.03] z-[2]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] z-[2]" />
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-[3]">
+        {bgImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentSlide(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              currentSlide === i ? "bg-primary w-6" : "bg-muted-foreground/30"
+            }`}
+          />
+        ))}
+      </div>
+
+      <div className="container relative z-[3]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-8">
