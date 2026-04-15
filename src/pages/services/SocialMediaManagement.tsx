@@ -208,58 +208,6 @@ const SocialMediaManagement = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-semibold tracking-wider uppercase mb-3">Our Work</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">Portfolio</h2>
-            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Browse our work across different industries.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {portfolioCategories.map((cat, i) => (
-              <motion.div key={cat.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_hsl(var(--primary)/0.2)]">
-                <div className="h-44 overflow-hidden">
-                  <img src={cat.images[0]} alt={cat.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div className="p-5 flex items-center justify-between">
-                  <h3 className="font-bold text-foreground text-lg">{cat.name}</h3>
-                  <Button size="sm" variant="outline" onClick={() => setOpenGallery(cat.name)}>
-                    View Gallery
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Modal */}
-      <AnimatePresence>
-        {openGallery && activeCategory && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm overflow-y-auto"
-            onClick={() => setOpenGallery(null)}>
-            <div className="container py-8" onClick={(e) => e.stopPropagation()}>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-bold text-foreground">{activeCategory.name} Portfolio</h2>
-                <Button size="icon" variant="ghost" onClick={() => setOpenGallery(null)}>
-                  <X size={20} />
-                </Button>
-              </div>
-              <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
-                {activeCategory.images.map((src, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }}
-                    className="break-inside-avoid rounded-lg overflow-hidden border border-border">
-                    <img src={src} alt={`${activeCategory.name} ${i + 1}`} loading="lazy" className="w-full h-auto" />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Process */}
       <section className="py-20 bg-card/50">
