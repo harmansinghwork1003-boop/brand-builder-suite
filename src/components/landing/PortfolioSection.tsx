@@ -75,6 +75,7 @@ const portfolioCategories = [
       "https://i.pinimg.com/1200x/8e/99/4d/8e994dc5b648b56965642d4ef7f34476.jpg",
       "https://i.pinimg.com/736x/bb/2a/5b/bb2a5b8997499652aac9cbbd0eb956df.jpg",
       "https://i.pinimg.com/736x/94/4a/12/944a126df95a80687ca1c933b16d58b4.jpg",
+      "/videos/real-estate-1.mp4",
       "https://i.pinimg.com/736x/97/10/6b/97106be1f5f1a5b6db39105bf4074d21.jpg",
       "https://i.pinimg.com/1200x/5f/fb/a2/5ffba2cf7545db5d9b4c2bd30e534196.jpg",
       "https://i.pinimg.com/736x/ed/d3/68/edd368e9fb32508965ec47089027a4b5.jpg",
