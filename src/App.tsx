@@ -17,6 +17,7 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Chatbot from "./components/Chatbot";
+import WhatsAppButton from "./components/WhatsAppButton";
 import SocialMediaCampaign from "./pages/portfolio/SocialMediaCampaign";
 import ECommercePlatform from "./pages/portfolio/ECommercePlatform";
 import RestaurantApp from "./pages/portfolio/RestaurantApp";
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
+          <WhatsAppButton />
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>
