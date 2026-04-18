@@ -23,6 +23,7 @@ import ECommercePlatform from "./pages/portfolio/ECommercePlatform";
 import RestaurantApp from "./pages/portfolio/RestaurantApp";
 import SaasDashboard from "./pages/portfolio/SaasDashboard";
 import About from "./pages/About";
+import CaseStudies from "./pages/CaseStudies";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/about" element={<About />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/services/website-development" element={<WebsiteDevelopment />} />
             <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
