@@ -14,8 +14,8 @@ const services = [
 
 const navLinks = [
   { label: "About", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Portfolio", href: "/#portfolio" },
-  { label: "Process", href: "/#process" },
   { label: "Testimonials", href: "/#testimonials" },
 ];
 
