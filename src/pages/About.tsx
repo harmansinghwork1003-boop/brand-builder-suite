@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Linkedin, Target, Heart, Sparkles, Shield, ArrowRight } from "lucide-react";
+import { Linkedin, Target, Heart, Sparkles, Shield, ArrowRight, Lock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import team6 from "@/assets/team-6.jpg";
 
 const team = [
   {
-    name: "Aarav Sharma",
+    name: "Harman Singh",
     role: "Founder & CEO",
     bio: "8+ years building digital brands. Obsessed with growth, design, and shipping work that moves the needle.",
     image: team1,
@@ -258,12 +258,21 @@ const About = () => {
                 <div className="relative overflow-hidden rounded-xl mb-5 aspect-square bg-muted">
                   <img
                     src={m.image}
-                    alt={`${m.name}, ${m.role} at Makes & Made Developers`}
+                    alt={`${m.role} at Makes & Made Developers`}
                     width={512}
                     height={512}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover blur-2xl scale-110 select-none pointer-events-none"
+                    draggable={false}
                   />
+                  <div className="absolute inset-0 bg-background/40 backdrop-blur-md flex flex-col items-center justify-center text-center p-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mb-3">
+                      <Lock className="text-primary" size={20} />
+                    </div>
+                    <p className="text-xs font-semibold text-foreground/90 leading-snug">
+                      Unlocked after you<br />purchase any package
+                    </p>
+                  </div>
                 </div>
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <div>
