@@ -13,7 +13,7 @@ const services = [
 ];
 
 const navLinks = [
-  { label: "Why Us", href: "/#why-us" },
+  { label: "About", href: "/about" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Process", href: "/#process" },
   { label: "Testimonials", href: "/#testimonials" },
