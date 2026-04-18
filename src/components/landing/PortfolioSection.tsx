@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const portfolioCategories = [
   {
@@ -163,7 +163,18 @@ const fadeUp = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } };
 
 const PortfolioSection = () => {
   const [openGallery, setOpenGallery] = useState<string | null>(null);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const activeCategory = portfolioCategories.find((c) => c.name === openGallery);
+  const lightboxSrc = activeCategory && lightboxIdx !== null ? activeCategory.images[lightboxIdx] : null;
+
+  const showPrev = () => {
+    if (!activeCategory || lightboxIdx === null) return;
+    setLightboxIdx((lightboxIdx - 1 + activeCategory.images.length) % activeCategory.images.length);
+  };
+  const showNext = () => {
+    if (!activeCategory || lightboxIdx === null) return;
+    setLightboxIdx((lightboxIdx + 1) % activeCategory.images.length);
+  };
 
   return (
     <section id="portfolio" className="section-padding bg-background">
@@ -220,12 +231,67 @@ const PortfolioSection = () => {
               <div className="columns-2 md:columns-3 gap-4 space-y-4">
                 {activeCategory.images.map((src, idx) => (
                   src.endsWith('.mp4') ? (
-                    <video key={idx} src={src} controls playsInline className="w-full rounded-lg break-inside-avoid" />
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setLightboxIdx(idx)}
+                      className="block w-full rounded-lg break-inside-avoid overflow-hidden cursor-zoom-in transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.4)]"
+                    >
+                      <video src={src} muted playsInline preload="metadata" className="w-full pointer-events-none" />
+                    </button>
                   ) : (
-                    <img key={idx} src={src} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full rounded-lg break-inside-avoid" />
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setLightboxIdx(idx)}
+                      className="block w-full rounded-lg break-inside-avoid overflow-hidden cursor-zoom-in transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.4)]"
+                    >
+                      <img src={src} alt={`${activeCategory.name} ${idx + 1}`} loading="lazy" className="w-full" />
+                    </button>
                   )
                 ))}
               </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {lightboxSrc && activeCategory && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-background/98 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={() => setLightboxIdx(null)}
+          >
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIdx(null); }}
+              className="absolute top-4 right-4 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5 text-foreground" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); showPrev(); }}
+              className="absolute left-4 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-6 h-6 text-foreground" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); showNext(); }}
+              className="absolute right-4 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-6 h-6 text-foreground" />
+            </button>
+            <div className="max-w-5xl max-h-[90vh] w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+              {lightboxSrc.endsWith('.mp4') ? (
+                <video src={lightboxSrc} controls autoPlay playsInline className="max-h-[90vh] max-w-full rounded-lg" />
+              ) : (
+                <img src={lightboxSrc} alt={`${activeCategory.name} ${lightboxIdx! + 1}`} className="max-h-[90vh] max-w-full rounded-lg object-contain" />
+              )}
             </div>
           </motion.div>
         )}
